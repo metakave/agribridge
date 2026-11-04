@@ -7,34 +7,36 @@
    1. CSS Custom Properties / Design Tokens
    -------------------------------------------------------------------------- */
 :root {
-  /* Colors */
-  --color-primary: #0f382c;        /* Deep Agricultural Pine / Emerald */
-  --color-primary-light: #164e3e;
-  --color-primary-dark: #0a251d;
-  --color-accent: #c88a35;         /* Golden Wheat / Harvest Amber */
-  --color-accent-light: #dfa658;
-  --color-accent-soft: rgba(200, 138, 53, 0.12);
-  
-  --color-bg: #f9f8f5;             /* Warm Natural Sand / Cream */
+  /* Colors borrowed directly from the AgriBridge Logo */
+  --color-primary: #700000;        /* Signature AgriBridge Burgundy / Crimson Bridge Arch */
+  --color-primary-light: #8e1414;  /* Vibrant Burgundy Hover */
+  --color-primary-dark: #2b0404;   /* Deep Wine / Dark Burgundy */
+  --color-primary-soft: rgba(112, 0, 0, 0.08);
+
+  --color-accent: #d99b38;         /* Golden Wheat Amber from the Wheat Stalk */
+  --color-accent-light: #fecf84;   /* Light Golden Grain Highlight */
+  --color-accent-soft: rgba(217, 155, 56, 0.16);
+
+  --color-bg: #fcfbf8;             /* Warm Pearl Linen Background */
   --color-surface: #ffffff;
-  --color-surface-soft: #f3efe6;
-  --color-surface-translucent: rgba(255, 255, 255, 0.85);
-  
-  --color-text-main: #1f2723;      /* Deep Slate Charcoal */
-  --color-text-muted: #596560;
-  --color-text-light: #8b9691;
-  
-  --color-border: #e6e0d5;
-  --color-border-light: rgba(255, 255, 255, 0.18);
-  
+  --color-surface-soft: #f7f4ed;   /* Warm Cream / Soft Wheat Surface */
+  --color-surface-translucent: rgba(255, 255, 255, 0.9);
+
+  --color-text-main: #18191a;      /* Rich Black from "Agri Bridge" Wordmark */
+  --color-text-muted: #58595b;     /* Slate Grey from "Commodity Indenting & Trading" */
+  --color-text-light: #7c7e82;
+
+  --color-border: #e8e3d8;
+  --color-border-light: rgba(255, 255, 255, 0.2);
+
   /* Status & Accents */
-  --color-success: #1e7e4e;
-  --color-success-bg: #eaf6ef;
-  
+  --color-success: #1f7d4b;
+  --color-success-bg: #eaf7ef;
+
   /* Typography */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
+
   /* Layout & Spacing */
   --container-max: 1200px;
   --container-padding: 1.5rem;
@@ -42,13 +44,13 @@
   --border-radius-md: 12px;
   --border-radius-lg: 20px;
   --border-radius-full: 9999px;
-  
+
   /* Shadows & Elevation */
-  --shadow-sm: 0 2px 8px rgba(15, 56, 44, 0.04);
-  --shadow-md: 0 8px 24px rgba(15, 56, 44, 0.08);
-  --shadow-lg: 0 16px 40px rgba(15, 56, 44, 0.12);
-  --shadow-glow: 0 0 35px rgba(200, 138, 53, 0.22);
-  
+  --shadow-sm: 0 2px 8px rgba(112, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(112, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(112, 0, 0, 0.12);
+  --shadow-glow: 0 0 35px rgba(217, 155, 56, 0.28);
+
   /* Transitions */
   --transition-fast: 0.18s ease;
   --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
@@ -93,10 +95,10 @@ body::before {
   pointer-events: none;
   z-index: -1;
   background: 
-    radial-gradient(circle at 12% 18%, rgba(200, 138, 53, 0.09) 0%, transparent 40%),
-    radial-gradient(circle at 88% 12%, rgba(22, 78, 62, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 50% 85%, rgba(200, 138, 53, 0.06) 0%, transparent 50%),
-    linear-gradient(180deg, #fbfaf7 0%, #f7f4ed 100%);
+    radial-gradient(circle at 12% 18%, rgba(217, 155, 56, 0.10) 0%, transparent 42%),
+    radial-gradient(circle at 88% 12%, rgba(112, 0, 0, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(217, 155, 56, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #fdfcf9 0%, #f7f3ec 100%);
 }
 
 img, svg {
@@ -219,23 +221,20 @@ p:last-child {
 }
 
 .brand-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: var(--font-heading);
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  letter-spacing: -0.03em;
+  line-height: 1;
+  text-decoration: none;
 }
 
 .brand-logo-img {
-  width: 44px;
-  height: 44px;
+  height: 52px;
+  width: auto;
+  max-width: 220px;
   object-fit: contain;
   display: block;
   flex-shrink: 0;
-  border-radius: 8px;
 }
 
 .brand-icon {
@@ -331,26 +330,26 @@ p:last-child {
 .btn-primary {
   background-color: var(--color-primary);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(15, 56, 44, 0.25);
+  box-shadow: 0 4px 14px rgba(112, 0, 0, 0.28);
 }
 
 .btn-primary:hover {
   background-color: var(--color-primary-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(15, 56, 44, 0.35);
+  box-shadow: 0 6px 20px rgba(112, 0, 0, 0.38);
   color: #ffffff;
 }
 
 .btn-accent {
   background-color: var(--color-accent);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(200, 138, 53, 0.3);
+  box-shadow: 0 4px 14px rgba(217, 155, 56, 0.32);
 }
 
 .btn-accent:hover {
-  background-color: var(--color-accent-light);
+  background-color: #c78929;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(200, 138, 53, 0.4);
+  box-shadow: 0 6px 20px rgba(217, 155, 56, 0.42);
   color: #ffffff;
 }
 
@@ -400,14 +399,17 @@ p:last-child {
   border-radius: var(--border-radius-full);
 }
 
-.badge-green {
-  background: rgba(22, 78, 62, 0.12);
+.badge-green,
+.badge-wine {
+  background: rgba(112, 0, 0, 0.08);
   color: var(--color-primary);
+  border: 1px solid rgba(112, 0, 0, 0.16);
 }
 
 .badge-gold {
   background: var(--color-accent-soft);
-  color: #a86c1f;
+  color: #a36c17;
+  border: 1px solid rgba(217, 155, 56, 0.28);
 }
 
 /* --------------------------------------------------------------------------
@@ -519,7 +521,7 @@ p:last-child {
   padding: 0.9rem 1.1rem;
   background: #ffffff;
   border-radius: var(--border-radius-md);
-  border: 1px solid rgba(15, 56, 44, 0.08);
+  border: 1px solid rgba(112, 0, 0, 0.08);
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-fast);
 }
@@ -561,13 +563,13 @@ p:last-child {
   margin-top: 1.5rem;
   padding: 0.85rem 1rem;
   border-radius: var(--border-radius-md);
-  background: var(--color-success-bg);
-  border: 1px solid rgba(30, 126, 78, 0.25);
+  background: rgba(112, 0, 0, 0.05);
+  border: 1px solid rgba(112, 0, 0, 0.16);
   display: flex;
   align-items: center;
   gap: 0.75rem;
   font-size: 0.85rem;
-  color: #175e39;
+  color: #700000;
   font-weight: 600;
 }
 
@@ -689,7 +691,7 @@ p:last-child {
    9. Corridors & Supply Network
    -------------------------------------------------------------------------- */
 .corridors-section {
-  background: linear-gradient(180deg, rgba(22, 78, 62, 0.04) 0%, rgba(200, 138, 53, 0.04) 100%);
+  background: linear-gradient(180deg, rgba(112, 0, 0, 0.03) 0%, rgba(217, 155, 56, 0.04) 100%);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -835,7 +837,7 @@ p:last-child {
    11. Call to Action Banner
    -------------------------------------------------------------------------- */
 .cta-banner {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 70%, #153f31 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 70%, #520000 100%);
   color: #ffffff;
   border-radius: var(--border-radius-lg);
   padding: 4.5rem 3.5rem;
@@ -851,7 +853,7 @@ p:last-child {
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(200, 138, 53, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(217, 155, 56, 0.22) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -953,7 +955,7 @@ p:last-child {
 }
 
 .mv-card.mission .mv-icon {
-  background: rgba(15, 56, 44, 0.1);
+  background: rgba(112, 0, 0, 0.08);
   color: var(--color-primary);
 }
 
@@ -1253,7 +1255,7 @@ p:last-child {
 .form-control:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(15, 56, 44, 0.12);
+  box-shadow: 0 0 0 3px rgba(112, 0, 0, 0.12);
 }
 
 select.form-control {
@@ -1338,7 +1340,7 @@ textarea.form-control {
    -------------------------------------------------------------------------- */
 .site-footer {
   background: var(--color-primary-dark);
-  color: #d8e2dc;
+  color: #e8dede;
   padding: 4.5rem 0 2rem 0;
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1357,7 +1359,7 @@ textarea.form-control {
 }
 
 .footer-brand p {
-  color: #a4b4ad;
+  color: #b8a8a8;
   font-size: 0.9rem;
   line-height: 1.65;
   margin-bottom: 1.5rem;
@@ -1379,7 +1381,7 @@ textarea.form-control {
 
 .footer-link {
   font-size: 0.9rem;
-  color: #a4b4ad;
+  color: #b8a8a8;
   transition: color var(--transition-fast);
 }
 
@@ -1392,7 +1394,7 @@ textarea.form-control {
   flex-direction: column;
   gap: 0.85rem;
   font-size: 0.88rem;
-  color: #a4b4ad;
+  color: #b8a8a8;
 }
 
 .footer-contact-item {
@@ -1416,7 +1418,7 @@ textarea.form-control {
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.85rem;
-  color: #83978f;
+  color: #948282;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -1546,7 +1548,7 @@ body.menu-open {
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 2px solid var(--color-border);
     padding: 1.25rem var(--container-padding) 1.75rem var(--container-padding);
-    box-shadow: 0 16px 36px rgba(15, 56, 44, 0.14);
+    box-shadow: 0 16px 36px rgba(112, 0, 0, 0.12);
     flex-direction: column;
     gap: 0.4rem;
     z-index: 999;
@@ -1576,7 +1578,7 @@ body.menu-open {
     font-weight: 600;
     padding: 0.85rem 0.75rem;
     border-radius: var(--border-radius-sm);
-    border-bottom: 1px solid rgba(15, 56, 44, 0.06);
+    border-bottom: 1px solid rgba(112, 0, 0, 0.06);
     color: var(--color-text-main);
     display: flex;
     align-items: center;
