@@ -8,27 +8,36 @@ A clean, modern, ultra-fast loading landing website for **AgriBridge**, connecti
   - `about.html`: About page detailing the direct sourcing model, verified partner guarantee, GAFTA/FOSFA inspection pipeline, and market segments served.
   - `contact.html`: Comprehensive Request for Quotation (RFQ) form with commodity selector, volume, Incoterms, destination port, plus trading desk contact points and trading FAQs.
 - **Design & Performance**:
-  - Pure modern semantic HTML5 and CSS3 custom properties (CSS variables).
+  - Color palette directly borrowed from the official AgriBridge logo (Burgundy `#700000`, Wheat Amber `#d99b38`, and Rich Charcoal `#18191a`).
+  - Pure vector SVG logo integration across headers, footers, and favicon.
   - Atmospheric background with subtle organic gradients and glowing grain tones.
-  - Zero heavy JavaScript frameworks (< 5KB lightweight ES script for mobile drawer navigation and client-side RFQ validation).
+  - Ultra-lightweight interaction script (< 5KB ES module for mobile drawer navigation and client-side RFQ validation).
   - Preconnected, high-performance web typography (`Outfit` and `Plus Jakarta Sans`).
   - Fully responsive across mobile, tablet, and widescreen desktop displays.
 
 ## Local Preview
-You can preview the site immediately using any static web server:
+Preview the site immediately using the preview script:
 
 ```bash
-# Using Python
-python3 -m http.server 8080
+# Build & preview production dist
+npm run build
+npm run preview
 
-# Or using npx serve
-npx serve .
+# Or standard dev preview
+python3 -m http.server 8080
 ```
 Then open `http://localhost:8080` in your browser.
 
-## Deployment
-Because the site is pure static HTML/CSS/JS, it can be deployed with zero configuration to:
-- **Vercel** (`npx vercel`)
-- **Netlify** (`npx netlify deploy`)
-- **Cloudflare Pages** / **GitHub Pages**
-- Any standard Apache/Nginx web server or S3 bucket.
+## Cloudflare Pages Deployment
+
+This repository is optimized for **Cloudflare Pages**. When connecting this repository in Cloudflare:
+
+| Setting | Value |
+| :--- | :--- |
+| **Framework preset** | None / Static HTML |
+| **Build command** | `npm run build` |
+| **Build output directory** | `dist` |
+
+### Cloudflare Optimizations Included:
+- **`_headers`**: Automatic HTTP security headers (`X-Frame-Options`, `X-Content-Type-Options`) and long-lived immutable caching for `/assets/*`, `/css/*`, and `/js/*`.
+- **`_redirects`**: Clean URL rewrites (`/about` &rarr; `/about.html`, `/contact` &rarr; `/contact.html`).

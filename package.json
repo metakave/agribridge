@@ -1,0 +1,17 @@
+{
+  "name": "agribridge",
+  "version": "1.0.0",
+  "description": "AgriBridge landing site - Agricultural Commodity Trading & Supply",
+  "scripts": {
+    "build": "node build.js",
+    "preview": "python3 -m http.server 8080 --directory dist"
+  },
+  "keywords": [
+    "agribridge",
+    "commodity-trading",
+    "agriculture",
+    "cloudflare-pages"
+  ],
+  "author": "metakave",
+  "license": "ISC"
+}

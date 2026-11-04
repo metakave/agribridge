@@ -1,0 +1,4 @@
+# Cloudflare Pages Redirects & Clean URLs
+/about    /about.html    200
+/contact  /contact.html  200
+/home     /              301
