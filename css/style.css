@@ -22,9 +22,9 @@
   --color-surface-soft: #f7f4ed;   /* Warm Cream / Soft Wheat Surface */
   --color-surface-translucent: rgba(255, 255, 255, 0.9);
 
-  --color-text-main: #18191a;      /* Rich Black from "Agri Bridge" Wordmark */
-  --color-text-muted: #58595b;     /* Slate Grey from "Commodity Indenting & Trading" */
-  --color-text-light: #7c7e82;
+  --color-text-main: #141517;      /* Deep Rich Charcoal Black */
+  --color-text-muted: #383a3e;     /* High-Contrast Dark Slate Grey */
+  --color-text-light: #4a4d52;     /* Dark Charcoal Grey for Secondary Text */
 
   --color-border: #e8e3d8;
   --color-border-light: rgba(255, 255, 255, 0.2);
@@ -475,8 +475,8 @@ p:last-child {
 }
 
 .stat-item .stat-label {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.88rem;
+  font-weight: 600;
   color: var(--color-text-muted);
   line-height: 1.35;
 }
@@ -550,13 +550,16 @@ p:last-child {
 }
 
 .ticker-item h4 {
-  font-size: 0.95rem;
-  margin-bottom: 0.15rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 0.2rem;
 }
 
 .ticker-item p {
-  font-size: 0.78rem;
-  color: var(--color-text-light);
+  font-size: 0.85rem;
+  color: #383a3e;
+  font-weight: 600;
 }
 
 .hero-verification-badge {
@@ -673,7 +676,8 @@ p:last-child {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 500;
   color: var(--color-text-muted);
   margin-bottom: 0.5rem;
 }
@@ -755,8 +759,9 @@ p:last-child {
 }
 
 .region-item p {
-  font-size: 0.825rem;
+  font-size: 0.875rem;
   color: var(--color-text-muted);
+  font-weight: 500;
 }
 
 .corridor-flow-connector {
@@ -1274,8 +1279,9 @@ textarea.form-control {
 }
 
 .form-help-text {
-  font-size: 0.775rem;
+  font-size: 0.825rem;
   color: var(--color-text-light);
+  font-weight: 500;
 }
 
 .form-status {
