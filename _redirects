@@ -1,4 +1,4 @@
-# Cloudflare Pages Redirects & Clean URLs
-/about    /about.html    200
-/contact  /contact.html  200
+# Cloudflare Pages Redirects
+# Note: Cloudflare Pages automatically handles Clean URLs (/about -> about.html) natively.
+# Explicit 200 rewrites to .html cause infinite redirect loops with Cloudflare's canonical clean URL engine.
 /home     /              301
